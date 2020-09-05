@@ -134,7 +134,7 @@ app.put("/sessions/:sessionId/asset", async (req, res) => {
   }
 });
 
-app.get('/sessions/:sessionId/assets', (req, res) => {
+app.get('/sessions/:sessionId/assets', async (req, res) => {
   const { sessionId } = req.params;
   try {
     const session = await Session.find({ sessionId }, 'watermarkUrl backgroundImageUrl');
